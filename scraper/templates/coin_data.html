@@ -1,0 +1,46 @@
+<!-- myapp/templates/table.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Coin Data Table</title>
+</head>
+<body>
+    <h1>Coin Data Table</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>1h%</th>
+                <th>24h%</th>
+                <th>7d%</th>
+                <th>Market Cap</th>
+                <th>Volume (24h)</th>
+                <th>Circulating Supply</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coin in coins %}
+            <tr>
+                <td>{{ coin.name }}</td>
+                <td>{{ coin.price }}</td>
+                <td>{{ coin.one_hour_change }}</td>
+                <td>{{ coin.twenty_four_hour_change }}</td>
+                <td>{{ coin.seven_day_change }}</td>
+                <td>{{ coin.market_cap }}</td>
+                <td>{{ coin.volume_24h }}</td>
+                <td>{{ coin.circulating_supply }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
